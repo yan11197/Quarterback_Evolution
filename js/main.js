@@ -151,6 +151,6 @@ function makeVis() {
     Spider = new Spider("spider");
     ScatterOverTime = new ScatterOverTime("scatter_over_time", globalFilteredData, globalByYearQBData, globalByPlayerQBData);
     Timeline = new Timeline("timeline", globalFilteredData, globalByYearQBData, globalByPlayerQBData);
-
+    Storyline = new Storyline("storyline", eventData, globalFilteredData);
 }
 

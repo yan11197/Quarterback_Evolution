@@ -19,8 +19,6 @@ Timeline.prototype.initVis = function() {
     var window_width = $(".timeline").width()
     var window_height = $(".timeline").height() - $(".h5_title").height() - 20
 
-    console.log(window_width)
-
     // Create SVG
     vis.margin = {top: 40, right: 40, bottom: 40, left: window_width*3/4},
         vis.width = window_width - vis.margin.left - vis.margin.right,
