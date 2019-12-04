@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D3 Project</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nouislider.css">
+</head>
+<body>
+<!--The Overall container-->
+<div class="container-fluid" style="height: 100vh; padding-top: 1vh; padding-left: 0vh; padding-right: 0vh">
+
+    <!--    Title row-->
+    <div class="row main_title">
+        <h1>Understanding the Quarterback Position and its Evolution</h1>
+    </div>
+
+    <!--    Adding the horizontal row-->
+    <hr align="center" width="30%">
+
+    <!--    Subtitle row-->
+    <div class="row sub_title">
+        Using data from 1996 to 2016, we have outlined a website that allows you to visualize the quarterback position
+        like never before, giving a comprehensive overview of the position
+    </div>
+
+    <!--    Image row-->
+    <div class="row" style="padding-top: 5vh; padding-bottom: 5vh">
+        <img src="img/CoverPhoto.jpg" class="header_image center">
+    </div>
+
+<!--    Visualization row with all of the actual text, visualizations, and timeline-->
+    <div class = "row">
+
+<!--        All of the visualizations and text-->
+        <div class = "col-7 offset-1 visualizations" style="height: 98vh; overflow-y: scroll">
+<!--            initial text-->
+            <div class = "row">
+                <div>
+                    <h2>Introduction</h2>
+                    <p>Welcome to our visualizations highlighting quarterback statistics. We use 20 years of quarterback
+                        statistics to visualize different aspects of the position. On the right hand of the page you will
+                        find a timeline where you can choose which years you want to focus on. By choosing a specific range,
+                        each subsequent visualization (other than the spider chart showing career statistics) will
+                        update accordingly.
+                    </p>
+                </div>
+                <div>
+                    <h3>Track Statistics over Time</h3>
+                    <p>Our first visualization allows you to get a good glimpse of how major quarterback statistics have
+                    evolved over time. We show the league average for each statistic in a given season, as well as the
+                    best and wost quarterback performances for that season. You can click on a tool tip to see how each
+                    best or worst quarterback performed in that statistic on a game level. A quarterback is only
+                    included if they have started 8 or more games (min. 10 attempts).</p>
+                </div>
+            </div>
+<!--            form and stats over time-->
+            <div class="row">
+                <div class="col">
+
+                    <div class="row justify-content-center">
+                        <div class="align-self-center">
+                            <div class="form-group" id = "first">
+                                <strong>Choose Your Statistic:</strong>
+                                <select class="form-control" id="stats_over_time_filter" onchange="StatsOverTime.updateVis(0, 0)">
+                                    <option value="att">Attempts</option>
+                                    <option value="cmp">Completions</option>
+                                    <option value="td">Touchdowns Thrown</option>
+                                    <option value="int">Interceptions</option>>
+                                    <option value="rate">NFL Quarterback Rating</option>
+                                    <option value="game_points">Game Points</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="height: 65vh" id="stats_over_time" style="height: 100%">
+                    </div>
+                </div>
+
+            </div>
+<!--            more text describing sliders-->
+            <div class="row" style="margin-top: 5vh">
+                <div>
+                    <h3>Choose Your Own Quarterback</h3>
+                    <p>After understanding how the position has evolved over time, and who have been the best and worst
+                        quarterbacks in recent history, we want you to choose the type of quarterback you might have wanted
+                        over the past 20 years. Adjust the sliders to see which quarterbacks fit which criteria. Then click
+                        on the quarterback on of your interest to see a spider plot of their career statistics and how they
+                        compare to the average quarterbacks during the span of their careers.</p>
+                </div>
+            </div>
+<!--            sliders and scatter-->
+            <div class="row">
+
+                <!--                The sliders-->
+                <div class = "col-3 offset-1 vis slider_plot">
+                    <!--                    The x axis-->
+                    <div class="row justify-content-center form-group">
+                        <strong>X-Axis</strong>
+                        <select class="form-control" id="scatter_over_time_x" onchange="ScatterOverTime.updateVis()">
+                            <option value="rate">NFL Quarterback Rating</option>
+                            <option value="td">Touchdowns Thrown</option>
+                            <option value="att">Attempts</option>
+                            <option value="cmp">Completions</option>
+                            <option value="int">Interceptions</option>>
+                            <option value="game_points">Game Points</option>
+                        </select>
+                    </div>
+                    <!--                    The y axis-->
+                    <div class="row justify-content-center form-group">
+                        <strong>Y-Axis</strong>
+                        <select class="form-control" id="scatter_over_time_y" onchange="ScatterOverTime.updateVis()">
+                            <option value="td">Touchdowns Thrown</option>
+                            <option value="rate">NFL Quarterback Rating</option>
+                            <option value="att">Attempts</option>
+                            <option value="cmp">Completions</option>
+                            <option value="int">Interceptions</option>>
+                            <option value="game_points">Game Points</option>
+                        </select>
+                    </div>
+
+                    <div class="slider" id ='slider-d'>
+                        <div class="row justify-content-center slider-title">QB Rating</div>
+                        <div class="row justify-content-center sliders" id = "slider-rate"></div>
+                        <div class="row justify-content-center slider-title">Game Points</div>
+                        <div class="row justify-content-center sliders" id = "slider-game_points"></div>
+                        <div class="row justify-content-center slider-title">TD Passes</div>
+                        <div class="row justify-content-center sliders" id = "slider-td"></div>
+                        <div class="row justify-content-center slider-title">Passing Yards</div>
+                        <div class="row justify-content-center sliders" id = "slider-yds"></div>
+                        <div class="row justify-content-center slider-title">Attempts</div>
+                        <div class="row justify-content-center sliders" id = "slider-att"></div>
+                        <div class="row justify-content-center slider-title">Completions</div>
+                        <div class="row justify-content-center sliders" id = "slider-cmp"></div>
+                        <div class="row justify-content-center slider-title">Interceptions</div>
+                        <div class="row justify-content-center sliders" id = "slider-int"></div>
+                    </div>
+                </div>
+                <!--                The scatterplot-->
+                <div class = "col-8 vis stat_filter_scatter">
+                    <!--                    The scatter-->
+                    <div class="row" id="scatter_over_time" style="height: 100%"></div>
+                </div>
+
+            </div>
+
+<!--            spider-->
+            <div class="row">
+                <!--                The spider-->
+                <div class = "col-12 vis spider_plot">
+                    <div class="row">
+                        <h3>Spider Plot: Career vs. Average Statistics</h3>
+                    </div>
+                    <div class="row" id="spider" style="height: 65vh"></div>
+                </div>
+            </div>
+        </div>
+
+<!--        The timeline-->
+        <div class = "col-4 vis timeline" style="height: 98vh;">
+            <div>
+                <h5 class="h5_title">Drag Timeline to Choose Year Range for Statistics</h5>
+            </div>
+            <div class="row timeline"></div>
+        </div>
+
+    </div>
+</div>
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/d3.min.js"></script>
+    <script src="js/math.js"></script>
+    <script src="js/d3-tip.js"></script>
+    <script src="js/nouislider.js"></script>
+    <script src="js/wNumb.js"></script>
+
+    <script src="js/StatsOverTime.js"></script>
+    <script src="js/ScatterOverTime.js"></script>
+    <script src="js/Spider.js"></script>
+    <script src="js/Slider.js"></script>
+    <script src="js/Timeline.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

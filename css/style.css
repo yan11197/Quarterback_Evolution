@@ -1,0 +1,90 @@
+/* custom css rules */
+
+body {
+	font-family: 'Raleway', sans-serif;
+}
+
+.d3-tip {
+	font-size: 12px;
+}
+
+div {
+	text-align: center;
+	font-family: "Palatino", URW, serif;
+}
+
+.main_title {
+	padding-left: 25%;
+	padding-right: 25%;
+	padding-top: 5%;
+}
+
+.sub_title {
+	padding-left: 40%;
+	padding-right: 40%;
+}
+
+.header_image {
+	width: 100%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+p.title_description {
+	text-align: justify;
+	font-family: "Palatino", URW, serif;
+	padding-left: 35%;
+	padding-right: 35%;
+}
+
+p {
+	text-align: justify;
+	font-family: "Palatino", URW, serif;
+	/*padding-left: 18%;*/
+	/*padding-right: 18%;*/
+}
+
+.vis_holder {
+	color: blue;
+}
+
+
+div.vis {
+	/*padding-left: 18%;*/
+	/*padding-right: 18%;*/
+}
+.sliders {
+	margin-bottom: 8%;
+}
+.slider-title {
+	/*padding-bottom: 5%;*/
+}
+
+.axis--grid .domain {
+	fill: #ddd;
+	stroke: none;
+}
+
+.axis--x .domain,
+.axis--grid .tick line {
+	stroke: #fff;
+}
+
+.axis--grid .tick--minor line {
+	stroke-opacity: .5;
+}
+/*#slider-d {*/
+/*	height: 30%;*/
+/*	width: 30%;*/
+/*}*/
+.slider-title {
+	text-align: center;
+}
+#first {
+	padding-left: 20%;
+}
+h5 {
+	padding-left: 20%;
+	padding-right: 20%;
+}
