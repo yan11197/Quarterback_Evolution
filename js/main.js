@@ -15,7 +15,7 @@ var minAttempts = 10;
 var sliders = {};
 
 // Getting the inserted data
-d3.csv("data/Timeline.csv", function(error, dataCsv) {
+d3.csv("Timeline.csv", function(error, dataCsv) {
     if (!error) {
         eventData = dataCsv
         console.log(eventData)
@@ -23,7 +23,7 @@ d3.csv("data/Timeline.csv", function(error, dataCsv) {
 })
 
 // Getting the data
-d3.csv("data/QBStats_all.csv", function(error, dataCsv) {
+d3.csv("QBStats_all.csv", function(error, dataCsv) {
     if (!error) {
         // Saving out the data
         dataAllYears = dataCsv;
