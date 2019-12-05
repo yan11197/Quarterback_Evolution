@@ -88,3 +88,8 @@ h5 {
 	padding-left: 20%;
 	padding-right: 20%;
 }
+
+img {
+	max-height: 100%;
+	max-width: 100%
+}

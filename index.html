@@ -31,21 +31,77 @@
     </div>
 
     <!--The storytelling container-->
-    <div class="row" style="height : 50vh">
+    <div class="row" style="height : 130vh">
         <div class="col-8 offset-2">
 
             <!--    Text row that introduces the website and the storytelling-->
-            <div class="row" style="height: 10vh">
-                <p>Adding in introductory text that does all of the storytelling</p>
+            <div class="row justify-content-center" style="height: 20vh">
+                <div class="row">
+                    <h2>Introduction</h2>
+                </div>
+                <div class="row">
+                    <p>Welcome to our website that walks you through how quarterbacks have evolved over time.
+                        The rules have generally changed to protect the quarterback, and their receivers,
+                        which has paved the way for many record-breaking quarterback performances. In many ways, we are
+                        entering a golden-age for quarterbacks and will expect to see even more impressive numbers in the
+                        future. You can see some of the major rule changes, and some of the resulting record-breaking
+                        quarterback performances in the 20-year timeline below. Click any red line to see a prolific
+                        rule change, and any green line to see a prolific performance. To dig deeper into specific quarterback
+                        trends over time, or to see stats for specific players, scroll beyond the timeline.</p>
+                </div>
             </div>
 
             <!--    Storytelling row-->
             <div class="row" id="storyline" style="height: 30vh"></div>
 
-            <!--    Text row that introduces how to use the website and describes the tools you can use-->
-            <div class="row" style="height: 10vh">
-                <p>Adding in text that introduces what you can do on this website, includes text and images of what you
-                    can do on this website</p>
+            <div class="row" id="story_info" style="height: 30vh">
+                <div class="col-4">
+                    <img id="story_img">
+                </div>
+
+                <div class="col-8">
+                    <h id="story_title"></h>
+                    <p id="story_desc"></p>
+                </div>
+
+            </div>
+
+            <!-- guidance on how to use the dashboard -->
+            <div class = "row justify-content-center" style="height:50vh">
+                <div class="row">
+                    <h2>How to Use</h2>
+                </div>
+                <div class = "row">
+                    <p>More specific quarterback trends can be investigated below. Only quarterbacks that started 8 or more
+                        games who threw more than 10 attempts were considered. Scrolling to the left will take you through
+                        all of our visualizations, and on the right a timeline will remain. To investigate trends in a more
+                        specific time frame, you can brush over the timeline to then filter the line chart and the scatter plot.
+                        With the line chart (shown on the left), you select from a number of stats, and see how they have
+                        changed over time in the NFL. You can also hover over his dot to see his season per-game stats, and
+                        then click on the dot to see how the player highlighted compared to the average player
+                        over that specific season. In the scatter plot (shown in the middle), you can use the sliders
+                        to filter to a select number of quarter backs, as well as change the variables on the axis that
+                        you are looking at. Then, you can hover over a player, and when you click on the circle, the spider
+                        plot (shown on the right) will update to compare that player's average stats over the given time
+                        range to the average player over that same time period. So for example, if you want to find a player
+                        that throws a lot of touchdowns, like Aaron Rodgers (pictured above), you could find him on the scatter
+                        plot, then click on his circle, and scroll down to see that yes, he has thrown for the most touchdowns
+                        over the time frame, which is much more than average. In fact, Aaron Rodgers is one of the best
+                        quarterbacks of all time, so it makes sense he is better than average in every category considered.
+                    </p>
+                </div>
+                <div class = "row">
+                    <div class = "col-4 justify-content-center">
+                        <img src="photos/LineChart.png" alt="Line Chart">
+                    </div>
+                    <div class = "col-4 justify-content-center">
+                        <img src="photos/ScatterPlot.png" alt="Line Chart">
+                    </div>
+                    <div class = "col-4 justify-content-center">
+                        <img src="photos/SpiderPlot.png" alt="Line Chart">
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -56,15 +112,18 @@
 
 <!--        All of the visualizations and text-->
         <div class = "col-7 offset-1 visualizations" style="height: 98vh; overflow-y: scroll">
-<!--            initial text-->
+
+            <!-- initial text-->
             <div class = "row">
                 <div>
                     <h2>Introduction</h2>
-                    <p>Welcome to our visualizations highlighting quarterback statistics. We use 20 years of quarterback
-                        statistics to visualize different aspects of the position. On the right hand of the page you will
-                        find a timeline where you can choose which years you want to focus on. By choosing a specific range,
-                        each subsequent visualization (other than the spider chart showing career statistics) will
-                        update accordingly.
+                    <p>Welcome to our website that walks you through how quarterbacks have evolved over time.
+                        The rules have generally changed to protect the quarterback, and their receivers,
+                        which has paved the way for many record-breaking quarterback performances. In many ways, we are
+                        entering a golden-age for quarterbacks and will expect to see even more impressive numbers in the
+                        future. You can see some of the major rule changes, and some of the resulting record-breaking
+                        quarterback performances in the 20-year timeline below. Click any red line to see a prolific
+                        rule change, and any green line to see a prolific performance.
                     </p>
                 </div>
                 <div>

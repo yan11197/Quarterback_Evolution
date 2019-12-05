@@ -6,6 +6,7 @@ var globalFilteredData;
 var globalByYearQBData;
 var globalByPlayerQBData;
 var eventData;
+var yearCount;
 
 // Init Constants
 var minGames = 10;
@@ -18,9 +19,26 @@ var sliders = {};
 d3.csv("Timeline.csv", function(error, dataCsv) {
     if (!error) {
         eventData = dataCsv
-        console.log(eventData)
+
+        var d = {}
+
+        for (var i = 0; i < eventData.length; i++) {
+            eventData[i]['index'] = i}
+
+        for (var i = 0; i < eventData.length; i++) {
+            var year = eventData[i]['Year']
+            if (year in d) {
+                d[year] += 1
+                eventData[i]['count'] = d[year]
+            } else {
+                d[year] = 1
+                eventData[i]['count'] = d[year]}
+        }
+
+        // Recording the number per year
+        yearCount = d;
     }
-})
+});
 
 // Getting the data
 d3.csv("QBStats_all.csv", function(error, dataCsv) {
