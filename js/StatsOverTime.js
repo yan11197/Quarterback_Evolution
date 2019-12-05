@@ -387,14 +387,20 @@ StatsOverTime.prototype.updateVis = function(year1, year2) {
                 var best_points = vis.svg.selectAll(".best_circle")
                 var worst_points = vis.svg.selectAll(".worst_circle")
 
+                // For interceptions making sure its the reverse
+                var best_col = 'green';
+                var worst_col = 'red';
+
+                if (Stat === 'int') {best_col = 'red'; worst_col = 'green'}
+
                 // Ensuring that it is the correct color and opacity
                 best_points
-                    .style("fill", "green")
+                    .style("fill", best_col)
                     .style("opacity", 1);
 
                 // Ensuring that it is the correct color and opacity
                 worst_points
-                    .style("fill", "red")
+                    .style("fill", worst_col)
                     .style("opacity", 1);
 
                 // Updating the opacity
