@@ -1,9 +1,3 @@
-/*
- * Matrix - Object constructor function
- * @param _parentElement 	-- the HTML element in which to draw the area chart
- * @param _data						-- the dataset 'household characteristics'
- */
-
 StatsOverTime = function(_parentElement, _filteredData, _byYearQBData, _byPlayerQBData){
     this.parentElement = _parentElement;
     this.filteredData = _filteredData;
@@ -21,7 +15,6 @@ StatsOverTime.prototype.initVis = function() {
     var vis = this;
 
     vis.margin = { top: 40, right: 30, bottom: 15, left: 35};
-
 
     vis.width = $("#" + vis.parentElement).width() - vis.margin.left - vis.margin.right;
     vis.height = $("#" + vis.parentElement).height() - vis.margin.top - vis.margin.bottom;
@@ -628,7 +621,6 @@ StatsOverTime.prototype.makeLegend = function(leg_num) {
     }
 
     // Adding the circle
-
     var circle = vis.svg.selectAll('.circle_legend')
         .data(circle_data);
 
@@ -647,7 +639,6 @@ StatsOverTime.prototype.makeLegend = function(leg_num) {
     circle.exit().remove()
 
     // Adding the text
-
     var circle2 = vis.svg.selectAll('.circle_legend2')
         .data(circle_data);
 
@@ -668,7 +659,6 @@ StatsOverTime.prototype.makeLegend = function(leg_num) {
     circle2.exit().remove();
 
     // Adding the rectangles
-
     var rect = vis.svg.selectAll('.rect_legend')
         .data(rect_data)
 

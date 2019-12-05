@@ -4,11 +4,9 @@
  * @param _data						-- the dataset 'household characteristics'
  */
 
-Slider = function(_parentElement, _filteredData, _byYearQBData, _byPlayerQBData){
+Slider = function(_parentElement, _filteredData){
     this.parentElement = _parentElement;
     this.filteredData = _filteredData;
-    this.byYearQBData = _byYearQBData;
-    this.byPlayerQBData = _byPlayerQBData;
     this.count = 0;
     this.d;
 
@@ -76,7 +74,6 @@ Slider.prototype.wrangleData = function(year_1, year_2) {
                     vis.d[key][1] = best_stat
                 }
             }
-
         }
     }
 

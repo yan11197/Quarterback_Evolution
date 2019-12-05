@@ -10,7 +10,6 @@ Storyline = function(_parentElement, _eventData, _filteredData){
 Storyline.prototype.initVis = function() {
     var vis = this;
 
-
     // Create SVG
     vis.margin = {top: 30, right: 30, bottom: 30, left: 30},
         vis.width = $("#storyline").width() - vis.margin.left - vis.margin.right,
@@ -26,7 +25,7 @@ Storyline.prototype.initVis = function() {
         .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
 
     vis.initStoryline()
-}
+};
 
 Storyline.prototype.initStoryline = function() {
     var vis = this;
@@ -58,7 +57,6 @@ Storyline.prototype.initStoryline = function() {
 
     vis.populateStoryline();
 };
-
 
 
 Storyline.prototype.populateStoryline = function() {
@@ -169,4 +167,4 @@ Storyline.prototype.updateVis = function() {
             document.getElementById("story_title").innerHTML = d['Title']
             document.getElementById("story_desc").innerHTML = d['Description']
         })
-}
+};

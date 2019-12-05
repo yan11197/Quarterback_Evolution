@@ -1,14 +1,6 @@
-/*
- * Matrix - Object constructor function
- * @param _parentElement 	-- the HTML element in which to draw the area chart
- * @param _data						-- the dataset 'household characteristics'
- */
-
-Timeline = function(_parentElement, _filteredData, _byYearQBData, _byPlayerQBData){
+Timeline = function(_parentElement, _filteredData){
     this.parentElement = _parentElement;
     this.filteredData = _filteredData;
-    this.byYearQBData = _byYearQBData;
-    this.byPlayerQBData = _byPlayerQBData;
 
     this.initVis();
 };
@@ -91,29 +83,4 @@ Timeline.prototype.initVis = function() {
 
         d3.select(this).transition().call(d3.event.target.move, d1.map(vis.x));
      }
-
-    vis.wrangleData();
-
-    vis.initDots();
 };
-
-Timeline.prototype.initDots = function() {
-
-};
-
-Timeline.prototype.wrangleData = function() {
-    var vis = this;
-
-    vis.updateVis();
-
-
-};
-
-
-
-Timeline.prototype.updateVis = function() {
-
-
-
-};
-

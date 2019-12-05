@@ -1,9 +1,3 @@
-/*
- * Matrix - Object constructor function
- * @param _parentElement 	-- the HTML element in which to draw the area chart
- * @param _data						-- the dataset 'household characteristics'
- */
-
 ScatterOverTime = function(_parentElement, _filteredData, _byYearQBData, _byPlayerQBData){
     this.parentElement = _parentElement;
     // this.filteredData = _filteredData;
@@ -85,8 +79,6 @@ ScatterOverTime.prototype.wrangleData = function(Start_year, End_year) {
     // Filling out the year filtered data set
     vis.byPlayerQBData_YearFiltered = {}
 
-    var count = 0;
-
     // Adding all of the quarterbacks
     for (var i = Start_year - 1996; i < End_year + 1 - 1996; i++) {
         for (qb_name in vis.byYearQBData[i]) {
@@ -165,7 +157,7 @@ ScatterOverTime.prototype.updateVis = function() {
 
     // Calling Spider only once
     if (vis.start === 0) {
-        Spider.wrangleData(qb_spider, byPlayerQBData_SpiderInput) // <---- changed from the byPlayerQBData_StatFiltered
+        Spider.wrangleData(qb_spider, byPlayerQBData_SpiderInput)
         vis.start = 1
     }
 

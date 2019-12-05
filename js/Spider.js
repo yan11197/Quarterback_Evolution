@@ -1,9 +1,3 @@
-/*
- * Matrix - Object constructor function
- * @param _parentElement 	-- the HTML element in which to draw the area chart
- * @param _data						-- the dataset 'household characteristics'
- */
-
 // Note that a decent chunk of code was incorporated from
 // https://gist.github.com/nbremer/21746a9668ffdf6d8242#file-radarchart-js
 // but several changes had to be made in order for this to fit our project
@@ -141,7 +135,6 @@ Spider.prototype.wrangleData = function(playerName, playerQBData) {
 };
 
 
-
 Spider.prototype.updateVis = function() {
     var vis = this;
 
@@ -157,7 +150,6 @@ Spider.prototype.updateVis = function() {
     var rScale = d3.scaleLinear()
         .range([0, radius])
         .domain([0, maxValue]);
-
 
     // create the svg and the g
     //Remove whatever chart with the same id/class was present before
@@ -175,7 +167,6 @@ Spider.prototype.updateVis = function() {
     //Append a g element
     var g = vis.svg.append("g")
         .attr("transform", "translate(" + (vis.cfg.w/2 + vis.cfg.margin.left) + "," + (vis.cfg.h/2 + vis.cfg.margin.top) + ")");
-
 
     // add the glow on the areas
     //Filter for the outside glow
@@ -213,7 +204,6 @@ Spider.prototype.updateVis = function() {
         .attr("fill", "#737373")
         .text(function(d,i) { if (d === vis.cfg.levels) {return "Best";} else {return ""}})
 
-
     // draw the axes
     //Create the straight lines radiating outward from the center
     var axis = axisGrid.selectAll(".axis")
@@ -242,7 +232,6 @@ Spider.prototype.updateVis = function() {
         .text(function(d){return d})
         .call(wrap, vis.cfg.wrapWidth);
 
-
     // draw the actual blobs for the radar chart
     //The radial line function
     var radarLine = d3.lineRadial()
@@ -255,7 +244,6 @@ Spider.prototype.updateVis = function() {
         .data(vis.normSpiderData)
         .enter().append("g")
         .attr("class", "radarWrapper");
-
 
     //Append the backgrounds
     blobWrapper
@@ -301,7 +289,6 @@ Spider.prototype.updateVis = function() {
         .attr("cy", function(d,i){ return rScale(d.value) * Math.sin(angleSlice*i - Math.PI/2); })
         .style("fill", function(d,i,j) {colorCounter++; if (colorCounter < allAxis.length + 1) {return vis.cfg.color(0)} else {return vis.cfg.color(1)};})
         .style("fill-opacity", 0.8);
-
 
     // add circles for tooltips
     //Wrapper for the invisible circles on top
@@ -380,7 +367,6 @@ Spider.prototype.updateVis = function() {
             }
         });
     }
-
 };
 
 Spider.prototype.makeLegendRadar = function() {
@@ -417,7 +403,7 @@ Spider.prototype.makeLegendRadar = function() {
         .text(function(d){return d});
 
     spider_label.exit().remove()
-}
+};
 
 
 

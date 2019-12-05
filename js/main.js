@@ -12,9 +12,6 @@ var yearCount;
 var minGames = 10;
 var minAttempts = 10;
 
-// Initializing a way to get the sliders
-var sliders = {};
-
 // Getting the inserted data
 d3.csv("Timeline.csv", function(error, dataCsv) {
     if (!error) {
@@ -165,10 +162,10 @@ d3.csv("QBStats_all.csv", function(error, dataCsv) {
 // Initializes the data itself
 function makeVis() {
     StatsOverTime = new StatsOverTime("stats_over_time", globalFilteredData, globalByYearQBData, globalByPlayerQBData);
-    Slider = new Slider('slider', globalFilteredData, globalByYearQBData, globalByPlayerQBData);
+    Slider = new Slider('slider', globalFilteredData);
     Spider = new Spider("spider");
     ScatterOverTime = new ScatterOverTime("scatter_over_time", globalFilteredData, globalByYearQBData, globalByPlayerQBData);
-    Timeline = new Timeline("timeline", globalFilteredData, globalByYearQBData, globalByPlayerQBData);
+    Timeline = new Timeline("timeline", globalFilteredData);
     Storyline = new Storyline("storyline", eventData, globalFilteredData);
 }
 
