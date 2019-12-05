@@ -14,14 +14,14 @@ div {
 }
 
 .main_title {
-	padding-left: 25%;
-	padding-right: 25%;
+	padding-left: 20%;
+	padding-right: 20%;
 	padding-top: 5%;
 }
 
 .sub_title {
-	padding-left: 40%;
-	padding-right: 40%;
+	padding-left: 30%;
+	padding-right: 30%;
 }
 
 .header_image {
@@ -92,4 +92,26 @@ h5 {
 img {
 	max-height: 100%;
 	max-width: 100%
+}
+
+mark.red {
+	color: red;
+	background: none;
+}
+
+mark.green {
+	color: green;
+	background: none;
+}
+
+p.story {
+	vertical-align: bottom;
+}
+
+li {
+	text-align: left;
+}
+
+.section_sep {
+	margin-top: 4%;
 }

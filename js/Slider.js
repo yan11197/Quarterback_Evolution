@@ -34,7 +34,7 @@ Slider.prototype.initVis = function() {
             step: 0.1,
             connect: true,
             behaviour: 'drag',
-            tooltips: [true, true]
+            tooltips: [true, true],
         });
 
         // update scatter plot when moving slider

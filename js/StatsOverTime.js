@@ -20,7 +20,7 @@ StatsOverTime = function(_parentElement, _filteredData, _byYearQBData, _byPlayer
 StatsOverTime.prototype.initVis = function() {
     var vis = this;
 
-    vis.margin = { top: 30, right: 30, bottom: 15, left: 35};
+    vis.margin = { top: 40, right: 30, bottom: 15, left: 35};
 
 
     vis.width = $("#" + vis.parentElement).width() - vis.margin.left - vis.margin.right;
@@ -62,15 +62,16 @@ StatsOverTime.prototype.initVis = function() {
     vis.svg.append("text")
         .attr("class", "x_label")
         .attr("transform",
-            "translate(" + (vis.width/2) + " ," +
-            (vis.height + vis.margin.top + 5) + ")")
+            "translate(" + ((vis.width + vis.margin.left + vis.margin.right)/2) + " ," +
+                          (vis.height + vis.margin.top + 5) + ")")
         .style("text-anchor", "middle")
         .style("font-size", 12);
 
     // Adding the legend
     vis.svg.append("text")
         .attr("class", "title")
-        .attr("transform", "translate(" + (vis.width/2) + " ," + (vis.margin.top ) + ")")
+        .attr("transform", "translate(" + ((vis.width + vis.margin.left + vis.margin.right)/2) +
+                                            " ," + (vis.margin.top ) + ")")
         .style("text-anchor", "middle")
         .style("font-size", 12);
 
@@ -607,27 +608,6 @@ StatsOverTime.prototype.updateClick = function(d, Stat, best_worst, year1, year2
             var text = vis.svg.selectAll(".tooltip_text")
             text.remove()
         });
-
-    // // Creating and calling the tool tip
-    // var tool_tip_specific = d3.tip()
-    //     .attr("class", "d3-tip")
-    //     .offset([-8, 0])
-    //     .html(function(d) {
-    //         var s_qb_stats = qb_stats[d[1]]
-    //
-    //         // Return
-    //         return 'Attempts: ' + s_qb_stats['att'] + '<br/>Completions: ' + s_qb_stats['cmp'] +
-    //             '<br/>Touchdowns: ' + s_qb_stats['td'] + '<br/>Interceptions: ' + s_qb_stats['int']
-    //     });
-    //
-    // vis.svg.call(tool_tip_specific);
-    //
-    // vis.svg.selectAll(".average_circle")
-    //     .on('mouseover', tool_tip_specific.show)
-    //     .on('mouseout', tool_tip_specific.hide)
-
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 
     // Updating the transition time
     vis.transition_count = 800

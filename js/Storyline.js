@@ -54,7 +54,7 @@ Storyline.prototype.initStoryline = function() {
         .attr("class", "axis axis--grid")
         .call(d3.axisTop(vis.x)
         .ticks(20)
-        .tickSize(-vis.width));
+        .tickSize(-vis.height));
 
     vis.populateStoryline();
 };
@@ -165,7 +165,7 @@ Storyline.prototype.updateVis = function() {
             event_circ.exit().remove();
 
             // Updating the image and the text
-            document.getElementById("story_img").src = d['Image']
+            document.getElementById("story_img").src = d['Square_Image']
             document.getElementById("story_title").innerHTML = d['Title']
             document.getElementById("story_desc").innerHTML = d['Description']
         })
