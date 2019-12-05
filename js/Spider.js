@@ -17,7 +17,7 @@ Spider = function(_parentElement){
 Spider.prototype.initVis = function() {
     var vis = this;
 
-    vis.margin = {top: 45, right: 0, bottom: 25, left: 25};
+    vis.margin = {top: 45, right: 30, bottom: 25, left: 30};
 
     vis.width = $("#" + vis.parentElement).width();
     vis.height = $("#" + vis.parentElement).height();
@@ -336,9 +336,11 @@ Spider.prototype.updateVis = function() {
                 .attr('x', newX)
                 .attr('y', newY)
                 .text(d3.format(",.2f")(dataGrab[i].value))
-                .style('font-size', 11)
+                .style('font-size', 14)
+                .style("font-weight", "bold")
                 .transition().duration(200)
-                .style('opacity', 1);
+                .style('opacity', 1)
+
         })
         .on("mouseout", function(){
             tooltip.transition().duration(200)
