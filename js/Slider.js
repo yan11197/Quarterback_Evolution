@@ -1,9 +1,3 @@
-/*
- * Matrix - Object constructor function
- * @param _parentElement 	-- the HTML element in which to draw the area chart
- * @param _data						-- the dataset 'household characteristics'
- */
-
 Slider = function(_parentElement, _filteredData){
     this.parentElement = _parentElement;
     this.filteredData = _filteredData;

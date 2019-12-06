@@ -1,7 +1,7 @@
 # Quarterback_Evolution
 
 Process Book --> CS171 Final Project Process Book:
-This document outlines the steps we did to create our project. This shows details on most of our meetings, a ton of our sketches, and the design decisions that we made. This is a PDF document. Below is a link to our process book.
+This document outlines the steps we did to create our project. This shows details on most of our meetings, a ton of our sketches, and the design decisions that we made. This is a PDF document. Below is a link to our process book. At the top of the process book, you can find the link to the project website.
 https://docs.google.com/document/d/11LGvv0fax8BAy_hn5T9CmEyUVlxTL7XJWuHW0K_60O8/edit?usp=sharing
 
 Project Website:
