@@ -20,29 +20,48 @@ index.html: This is our HTML portion of the project, where all of our formatting
 
 JS:
 main.js: This is where we do a lot of data work and initialize our designs
+
 bootstrap.min.js: Bootstrap library
+
 d3-tip.js: Tootltip library
+
 d3.min.js: d3 library
+
 jquery.min.js: jquery library
+
 math.js: Math library
+
 nouislider.js: Slider library
+
 ScatterOverTime.js: This is our implementation of the scatter plot
+
 Slider.js: This is our implementation of the sliders
+
 Spider.js: This is our implementation of the spider plot
+
 StatsOverTime.js: This is our implementation of the Line Chart
+
 Storyline.js: This is our implementation of the storyline at the top
+
 Timeline.js: This is our implementation of the timeline on the right
+
 wNumb: This is the wNumb library for the sliders
 
+CSV:
+
 QBStats_all.csv: This is our QB data
+
 Timeline.csv: This is the CSV to implement the timeline
 
 
 
 CSS:
 bootstrap.min.css: This is the bootstrap library
+
 nouislider.css: This is the slider library for the style for the sliders
+
 style.css: This is our own style choices where we customize our webpage
 
 img:
+
 CoverPhoto.jpg: Our coverphoto of Aaron Rogers
